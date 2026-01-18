@@ -56,7 +56,7 @@
             <img src="{{ asset('assets/img/FORTE.png') }}">
         </a>
 
-        <div class="collapse navbar-collapse justify-content-end">
+        {{-- <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -65,7 +65,7 @@
                     <a class="nav-link btn-daftar-nav" href="{{ route('register') }}">Daftar</a>
                 </li>
             </ul>
-        </div>
+        </div> --}}
     </div>
 </nav>
 

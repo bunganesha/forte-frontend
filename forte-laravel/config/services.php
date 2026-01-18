@@ -38,4 +38,11 @@ return [
         // 'pass' => env('RASPI_PASS'),
     ],
 
+    'esp' => [
+        'host' => env('ESP_HOST'),
+        'port' => env('ESP_PORT'),
+        // 'user' => env('RASPI_USER'),
+        // 'pass' => env('RASPI_PASS'),
+    ],
+
 ];

@@ -11,20 +11,24 @@
 //     iconUrl: icon,
 //     shadowUrl: iconShadow,
 // });
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 window.Swal = Swal;
 
 window.confirmLogout = function () {
     Swal.fire({
-        title: 'Logout?',
-        text: 'Kamu akan keluar dari akun',
-        icon: 'warning',
+        title: "Yakin ingin logout?",
+        text: "Kamu akan keluar dari sesi login.",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonText: 'Ya, logout',
-        cancelButtonText: 'Batal'
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Ya, Logout",
+        cancelButtonText: "Batal",
     }).then((result) => {
         if (result.isConfirmed) {
-            document.getElementById('logout-form').submit();
+            document.getElementById("logout-form").submit();
         }
     });
 };

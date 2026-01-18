@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('zone')->nullable();;
             $table->string('anomaly')->nullable();;
             $table->string('description')->nullable();;
-            $table->integer('user_id')->nullable();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

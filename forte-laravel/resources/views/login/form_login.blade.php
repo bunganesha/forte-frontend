@@ -63,13 +63,27 @@
                 <input type="text" name="username" class="form-control form-control-forte">
 
                 <label>Password</label>
-                <input type="password" name="password" class="form-control form-control-forte">
+                <div class="position-relative">
+                    <input type="password" id="loginPassword" name="password" class="form-control form-control-forte pe-5">
+
+                    <i id="toggleLoginPassword" class="bi bi-eye-slash position-absolute"
+                        style="
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+            font-size: 1.2rem;
+        ">
+                    </i>
+                </div>
+
 
                 <button type="submit" class="btn btn-login">Login</button>
 
-                <p class="signup-text mt-3">
+                {{-- <p class="signup-text mt-3">
                     Belum punya akun <a href="{{ route('register') }}">(Daftar)</a>
-                </p>
+                </p> --}}
             </form>
         </div>
 
@@ -81,6 +95,22 @@
 @endsection
 
 @push('scripts')
+    <script>
+        const loginPassword = document.getElementById('loginPassword');
+        const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+
+        toggleLoginPassword.addEventListener('click', function() {
+            if (loginPassword.type === 'password') {
+                loginPassword.type = 'text';
+                this.classList.remove('bi-eye-slash');
+                this.classList.add('bi-eye');
+            } else {
+                loginPassword.type = 'password';
+                this.classList.remove('bi-eye');
+                this.classList.add('bi-eye-slash');
+            }
+        });
+    </script>
     @if (session('success'))
         <script>
             Swal.fire({
